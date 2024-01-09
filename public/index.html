@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresso</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+    <h1> Hauptseite</h1><br>
+    <h2>Erstelle eine minimale Express App, die mit Aufruf von localhost:3500/ das Datum und die aktuelle Uhrzeit ausgibt. (10 Punkte)</h2>
+    <h1>Aktuelles Datum und Uhrzeit:</h1>
+    <div id="current_datetime"></div>
+
+    <!-- Buttons und Divs für verschiedene Städte -->
+    <button onclick="showTime('America/Anchorage', 'anchorageTime')">Anchorage</button>
+    <div id="anchorageTime"></div>
+
+    <button onclick="showTime('America/New_York', 'miamiTime')">Miami</button>
+    <div id="miamiTime"></div>
+
+    <button onclick="showTime('America/Mexico_City', 'mexicoCityTime')">Mexico City</button>
+    <div id="mexicoCityTime"></div>
+
+    <button onclick="showTime('Africa/Johannesburg', 'johannesburgTime')">Johannesburg</button>
+    <div id="johannesburgTime"></div>
+
+    <button onclick="showTime('Europe/Berlin', 'munichTime')">München</button>
+    <div id="munichTime"></div>
+
+    <button onclick="showTime('Europe/Moscow', 'moscowTime')">Moskau</button>
+    <div id="moscowTime"></div>
+
+    <button onclick="showTime('Asia/Vladivostok', 'vladivostokTime')">Wladiwostok</button>
+    <div id="vladivostokTime"></div>
+
+    <button onclick="showTime('Asia/Tokyo', 'tokyoTime')">Tokio</button>
+    <div id="tokyoTime"></div>
+
+    <button onclick="showTime('Australia/Sydney', 'sydneyTime')">Sydney</button>
+    <div id="sydneyTime"></div>
+
+    <script>
+        // Funktion zur Aktualisierung von Datum und Uhrzeit für eine bestimmte Zeitzone
+        function showTime(timezone, targetDiv) {
+            let currentDateTime = new Date(new Date().toLocaleString("en-US", {timeZone: timezone}));
+            let year = currentDateTime.getFullYear();
+            let month = formatUnit(currentDateTime.getMonth() + 1);
+            let day = formatUnit(currentDateTime.getDate());
+            let hours = formatUnit(currentDateTime.getHours());
+            let minutes = formatUnit(currentDateTime.getMinutes());
+            let seconds = formatUnit(currentDateTime.getSeconds());
+
+            // Formatierung des Datums und der Uhrzeit
+            let formattedDateTime = `${month}/${day}/${year} ${hours}:${minutes}:${seconds}`;
+
+            // Anzeige in der entsprechenden HTML-Div
+            document.getElementById(targetDiv).innerHTML = formattedDateTime;
+        }
+
+        // Funktion zur Formatierung von Einheiten als zweistellige Zahl
+        function formatUnit(unit) {
+            return unit < 10 ? '0' + unit : unit;
+        }
+
+        // Funktion zur Aktualisierung der lokalen Uhrzeit
+        function updateDateTime() {
+            let currentDate = new Date();
+            let year = currentDate.getFullYear();
+            let month = formatUnit(currentDate.getMonth() + 1);
+            let day = formatUnit(currentDate.getDate());
+            let hours = formatUnit(currentDate.getHours());
+            let minutes = formatUnit(currentDate.getMinutes());
+            let seconds = formatUnit(currentDate.getSeconds());
+
+            // Formatierung des Datums und der Uhrzeit
+            let formattedDateTime = `${month}/${day}/${year} ${hours}:${minutes}:${seconds}`;
+
+            // Anzeige in der HTML-Div
+            document.getElementById("current_datetime").innerHTML = formattedDateTime;
+        }
+
+        // Aktualisieren Sie die Uhrzeit alle 1000 Millisekunden (1 Sekunde)
+        setInterval(updateDateTime, 1000);
+
+        // Initialer Aufruf, um die Uhrzeit sofort anzuzeigen
+        updateDateTime();
+    </script>
+</body>
+</html>
