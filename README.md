@@ -1,6 +1,6 @@
 # SimpleExpressJavaNodeServer
 ## Voraussetzungen
-Stelle sicher, dass die folgenden Voraussetzungen erfüllt sind, bevor das Projekt gestartet wir:
+Stelle sicher, dass die folgenden Voraussetzungen erfüllt sind, bevor das Projekt gestartet wird:
 - Node.js installiert: [Node.js herunterladen](https://nodejs.org/)
 ## Installation
 Klone das Repository auf lokalen Computer:
