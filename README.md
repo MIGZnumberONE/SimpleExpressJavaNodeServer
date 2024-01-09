@@ -1,26 +1,26 @@
 # SimpleExpressJavaNodeServer
 ## Voraussetzungen
-Stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllen, bevor Sie das Projekt starten:
+Stelle sicher, dass die folgenden Voraussetzungen erfüllt sind, bevor das Projekt gestartet wir:
 - Node.js installiert: [Node.js herunterladen](https://nodejs.org/)
 ## Installation
-1. Klone das Repository auf deinen lokalen Computer:
-```bash
+Klone das Repository auf lokalen Computer:
+```
 git clone https://github.com/MIGZnumberONE/SimpleExpressJavaNodeServer.git
 ```
-Wechsel in das Projektverzeichnis:
+Wechsel in Projektverzeichnis:
 ```
 cd SimpleExpressJavaNodeServer
 ```
-Installiere die erforderlichen Abhängigkeiten:
+Installiere erforderliche Abhängigkeiten:
 ```
 npm install express
 ```
-Führen Sie den folgenden Befehl aus, um den Express-Server zu starten:
+Führe folgenden Befehl aus, um Express-Server zu starten:
 ```
 npm start
 ```
-Der Server sollte jetzt gestartet sein. 
-Öffnen Sie die Anwendung in Ihren Webbrowser 
+## Der Server sollte jetzt gestartet sein. 
+Öffne Anwendung im Webbrowser 
 ```
 http://localhost:3500
 ```
